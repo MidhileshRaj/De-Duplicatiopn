@@ -1,0 +1,33 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/admin_viewsubject_post">
+  <table width="248" border="1">
+    <tr>
+      <td width="168"><input type="text" name="textfield" id="textfield" /></td>
+      <td width="150"><input type="submit" name="button" id="button" value="Submit" /></td>
+    </tr>
+  </table>
+  <table class="table table-bordered">
+    <tr>
+      <td width="43"><div align="center">Sl.no</div></td>
+      <td width="66"><div align="center">Subject</div></td>
+      <td width="58"><div align="center">Course</div></td>
+      <td width="101"><div align="center">Department</div></td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{i['subject' ] }}</td>
+      <td>&nbsp;{{ i['course'] }}</td>
+      <td>{{ i['department'] }}&nbsp;</td>
+      <td width="38"><a href="/edit_subject/{{ i['subject_id'] }}">Edit</a></td>
+      <td width="60"><a href="/delete_subject/{{ i['subject_id'] }}" onclick="return confirm('Are you sure')">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

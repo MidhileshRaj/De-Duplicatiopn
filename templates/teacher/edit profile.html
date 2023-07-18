@@ -1,0 +1,62 @@
+{% extends 'teacher/teacher_index.html' %}
+{% block body %}
+<form action="/edit_profile_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-bordered">
+    <tr>
+      <td width="91">First name</td>
+      <td width="250"><input type="text" class="form-control" name="textfield" id="textfield" value="{{ data1['name'] }}"required/></td>
+    </tr>
+{#    <tr>#}
+{#      <td>Last name</td>#}
+{#      <td><input type="text" name="textfield2" id="textfield2" /></td>#}
+{#    </tr>#}
+    <tr>
+      <td>Gender</td>
+      <td><input type="text" class="form-control" name="textfield3" id="textfield3" value="{{ data1['gender'] }}" required/></td>
+    </tr>
+    <tr>
+      <td>Department</td>
+      <td><select name="textfield4" class="form-control">
+          {% for i in data %}
+                <option value="{{ i['department_id'] }}">{{ i['department'] }} </option>
+          {% endfor %}
+
+      </select></td>    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="text" class="form-control" name="textfield5" id="textfield5" value="{{ data1['email'] }}"required /></td>
+    </tr>
+
+    <tr>
+      <td>Phone no</td>
+      <td><input type="text" class="form-control" name="textfield7" id="textfield7" value="{{ data1['phone_number'] }}"required /></td>
+    </tr>
+    <td>
+      <tr>
+      <td height="97">place</td>
+        <td><input type="text" class="form-control" name="textfield8" id="textfield8" value="{{ data1['place'] }}"required/></td>
+      </tr>
+      <tr>
+        <td>post</td>
+       <td><input type="text" class="form-control" name="textfield9" id="textfield9" value="{{ data1['post'] }}"required/></td>
+      </tr>
+      <tr>
+        <td>pin</td>
+      <td><input type="text" class="form-control" name="textfield10" id="textfield10"value="{{ data1['pin'] }}" required/></td>
+    </tr>
+    <tr>
+      <td height="32"><div align="center">
+        <p>Photo      </p>
+      </div></td>
+      <td><input type="file" class="form-control" name="fileField" id="fileField"  /></td>
+    </tr>
+
+    <tr>
+      <td colspan="2">    <div align="center">
+        <input type="submit" class="btn btn-success" name="button" id="button" value="Submit" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
+

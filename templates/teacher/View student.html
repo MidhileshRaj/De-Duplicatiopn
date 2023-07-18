@@ -1,0 +1,34 @@
+{% extends 'teacher/teacher_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <td width="60" height="35">Sl no.</td>
+      <td width="196">Name</td>
+      <td width="121">Id</td>
+      <td width="118">Gender</td>
+      <td width="147">Course</td>
+      <td width="184">Department</td>
+      <td width="247">Address</td>
+      <td width="116">Phone no. </td>
+      <td width="267">Email</td>
+      <td width="130">photo</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>{{ i['name'] }}&nbsp;</td>
+      <td>{{i['student_id']  }}&nbsp;</td>
+      <td>{{ i['gender'] }}&nbsp;</td>
+      <td>{{ i['course'] }}</td>
+      <td>{{ i['department'] }}</td>
+      <td>{{ i['place'] }},{{ i['pin'] }},{{ i['post'] }}</td>
+      <td>{{ i['phone_number'] }}</td>
+      <td>{{ i['email'] }}</td>
+      <td><img src="{{ i['photo'] }}"height="200px" width="100px" ></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}
+

@@ -1,0 +1,24 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <td width="92">Complaint</td>
+      <td width="42">Date</td>
+      <td width="68">User info</td>
+      <td width="57">Reply</td>
+      <td width="68">Status</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ i['complaints'] }}</td>
+      <td>{{ i['date']}}</td>
+      <td>&nbsp;{{ i['user_id'] }}</td>
+      <td>{% if i ['status']=='pending' %}<a href="/admin_reply/{{ i['complaints_id'] }}">Reply</a>{% else %}{{ i['reply'] }}{% endif %}</td>
+      <td>&nbsp;{{ i['status'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

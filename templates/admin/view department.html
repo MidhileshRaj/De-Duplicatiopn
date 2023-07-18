@@ -1,0 +1,28 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="admin_viewdepartment_post">
+  <table width="248" border="1">
+    <tr>
+      <td width="168"><input type="text" class="form-control" name="textfield" id="textfield" /></td>
+      <td width="64"><input type="submit" class="btn btn-outline-info" name="button" id="button" value="Search" /></td>
+    </tr>
+  </table>
+  <table class="table table-bordered">
+    <tr>
+      <td><div align="center">SI.no</div></td>
+      <td><div align="center">Department</div></td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td height="57">{{ loop.index }}</td>
+      <td>&nbsp;{{ i['department'] }}</td>
+      <td bgcolor="#FFFFFF"><div align="center"><a href="/edit_department/{{ i['department_id'] }}">Edit</a></div></td>
+      <td><div align="center"><a href="/delete_course/{{ i['department_id'] }}" onclick="return confirm('Are you sure')">Delete</a></div></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

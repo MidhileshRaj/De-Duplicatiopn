@@ -1,0 +1,19 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+
+
+
+<form id="form1" name="form1" method="post" action="/adddepartment_post">
+  <table class="table table-bordered">
+    <tr>
+      <td>Department</td>
+      <td><input type="text" class="btn btn-success" name="textfield" id="textfield" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" class="form-control" name="button" id="button" value="ADD" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

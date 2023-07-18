@@ -1,0 +1,23 @@
+{% extends 'teacher/teacher_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+        <td>Sl.no</td>
+      <td>Complaint</td>
+      <td>Date</td>
+      <td>Student</td>
+    </tr>
+      {% for i in data %}
+          <tr>
+          <td>{{ loop.index }}</td>
+                    <td>{{ i['date'] }}</td>
+              <td height="169">&nbsp;{{ i['complaints'] }}</td>
+      <td>{{ i['name'] }}&nbsp;</td>
+    </tr>
+        {% endfor %}
+  </table>
+</form>
+{% endblock %}

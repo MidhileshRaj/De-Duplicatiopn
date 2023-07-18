@@ -1,0 +1,49 @@
+{% extends 'teacher/teacher_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class= "table table-bordered">
+    <tr>
+      <td width="240" height="96">&nbsp;</td>
+      <td width="300"><input type="image" name="imageField" id="imageField" src="{{ data['photo'] }}" /></td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>{{ data['name'] }}</td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>{{ data['gender'] }}</td>
+    </tr>
+    <tr>
+      <td>Phone no.</td>
+      <td>{{ data['phone_number'] }}</td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td>{{ data['place'] }}</td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td>{{ data['post'] }}</td>
+    </tr>
+    <tr>
+      <td>Pin</td>
+      <td>{{ data['pin'] }}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{ data['email'] }}</td>
+    </tr>
+    <tr>
+      <td>Department</td>
+      <td>{{ data['department'] }}</td>
+    </tr>
+      <tr>
+          <td>
+                    <a href="/edit_profile">edit</a>
+
+          </td>
+      </tr>
+  </table>
+</form>
+{% endblock %}

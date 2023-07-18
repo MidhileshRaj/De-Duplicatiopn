@@ -1,0 +1,17 @@
+{% extends 'teacher/teacher_index.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/send_notification_post">
+  <table width="344" height="149" border="1">
+    <tr>
+      <td height="110"><textarea name="textarea" class="form-control" id="textarea" cols="45" rows="5"></textarea></td>
+    </tr>
+    <tr>
+      <td height="31"><div align="center">
+        <input type="submit" class="btn btn-success" name="button" id="button" value="Send" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
+

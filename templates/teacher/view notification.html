@@ -1,0 +1,25 @@
+{% extends 'teacher/teacher_index.html' %}
+{% block body %}
+
+
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <td width="82">SI.no</td>
+        <td width="219">Notification</td>
+      <td width="90">Date</td>
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td height="169">{{ loop.index }}</td>
+      <td>{{ i['notification'] }}</td>
+        <td>{{ i['date'] }}</td>
+        <td>
+      <p><a href="/delete_notification/{{ i['notification_id'] }}">Delete</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}
+

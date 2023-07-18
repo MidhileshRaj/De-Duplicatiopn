@@ -1,0 +1,34 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+
+
+<form id="form1" name="form1" method="post" action="/addsubject_post">
+  <table class="table table-bordered">
+    <tr>
+      <td>semester</td>
+      <td><input type="text" name="textfield" id="textfield" /></td>
+    </tr>
+
+    <tr>
+      <td>Course</td>
+         <td><select name="select">
+          {% for i in data %}
+          <option value="{{ i['course_id'] }}">{{ i['course'] }}</option>
+          {% endfor %}
+
+      </select> </td>
+    </tr>
+
+    <tr>
+      <td>Subject</td>
+      <td><input type="text" name="textfield3" id="textfield3" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" class="btn btn-success" name="button3" id="button3" value="Add" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
+

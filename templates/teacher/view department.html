@@ -1,0 +1,28 @@
+
+{% extends 'teacher/teacher_index.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="view_department_post">
+  <table  class="table table-bordered">
+    <tr>
+      <td width="168"><input type="text" class="form-control" name="textfield" id="textfield" /></td>
+      <td width="64"><input type="submit"  class="btn btn-outline-info" name="button" id="button" value="Search" /></td>
+    </tr>
+  </table>
+  <table  class="table table-bordered"  >
+    <tr style="color: white; background-color: black">
+      <th>SL NO</th>
+      <th>DEPARTMENT</th>
+    </tr>
+    <tr>
+        {% for i in data %}
+
+      <td>{{ loop.index }}</td>
+      <td>&nbsp;{{ i['department'] }}</td>
+    </tr>
+       {% endfor %}
+  </table>
+</form>
+{% endblock %}
+
+

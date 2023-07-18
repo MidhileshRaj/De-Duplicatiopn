@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/edit_course_post">
+  <table width="326" border="1">
+    <tr><input type="hidden" class="btn btn-outline-success" name="cid" value="{{ data['course_id'] }}">
+      <td>Department</td>
+      <td><select name="select">
+          {% for i in data2 %}
+          <option value="{{ i['department_id'] }}" {% if i['department_id']==data['department_id'] %}selected{% endif %}>{{ i['department'] }}</option>
+          {% endfor %}
+
+      </select> </td>
+    </tr>
+
+
+    <tr>
+      <td>Course</td>
+      <td><input type="text" class="btn btn-outline-success" name="textfield2" id="textfield2" value="{{ data['course'] }}"/></td>
+    </tr>
+      <tr>
+      <td>sem</td>
+      <td><input type="text" class="btn btn-outline-success" name="textfield4" id="textfield4" value="{{ data['total_semester'] }}" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" class="btn btn-outline-success" name="button2" id="button2" value="update" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
